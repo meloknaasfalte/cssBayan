@@ -1,0 +1,113 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(./assets/fonts/Ubuntu-Regular.ttf);
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu;
+    transition: all 0.5s;
+}
+
+.container {
+    display: flex;
+    padding: 4%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accordion {
+    width: 70%;
+}
+
+
+
+.title {
+    font-size: 3vw;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border-top: 2px solid #B9B9B9;
+}
+
+.toggle__image{
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+}
+
+.toggle__title {
+    font-size: 2vw;
+}
+
+/* .toggle__title::after {
+    content: '';
+    background-image: url(./assets/icons/plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3vw;
+    height: 3vh;
+    display: none;
+} */
+
+.toggle input{
+    display: none;
+}
+
+.toggle__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide {
+    display: flex;
+}
+
+
+
+.toggle :checked ~ .toggle__image {
+    width: 55%;
+    height: 55%;
+}
+
+.toggle :checked ~ .toggle__title {
+    color: #7b60e4;
+}
+
+.accordion:hover {
+    cursor: pointer;
+}
+
+.toggle__title {
+    cursor: pointer;
+}
+
+.accordion:hover .toggle__title::after {
+    content: '';
+    background-image: url(./assets/icons/plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3vw;
+    height: 3vh;
+    display: block;
+    transition: all 0.5s;
+}
+
+.accordion:hover .toggle__title {
+    color: #7b60e4;
+}
+
+.accordion:hover .toggle :checked ~ .toggle__title::after {
+    content: '';
+    background-image: url(./assets/icons/minus.svg);
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+}
