@@ -23,17 +23,18 @@
     width: 70%;
 }
 
-
-
 .title {
     font-size: 3vw;
+    margin-bottom: 2%;
+
 }
 
 .toggle {
     display: flex;
     flex-direction: column;
     padding: 2%;
-    border-top: 2px solid #B9B9B9;
+    border-top: 0.2vw solid #B9B9B9;
+    cursor: pointer;
 }
 
 .toggle__image{
@@ -45,16 +46,6 @@
 .toggle__title {
     font-size: 2vw;
 }
-
-/* .toggle__title::after {
-    content: '';
-    background-image: url(./assets/icons/plus.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 3vw;
-    height: 3vh;
-    display: none;
-} */
 
 .toggle input{
     display: none;
@@ -70,8 +61,6 @@
 .slide {
     display: flex;
 }
-
-
 
 .toggle :checked ~ .toggle__image {
     width: 55%;
@@ -90,24 +79,71 @@
     cursor: pointer;
 }
 
-.accordion:hover .toggle__title::after {
-    content: '';
-    background-image: url(./assets/icons/plus.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 3vw;
-    height: 3vh;
-    display: block;
-    transition: all 0.5s;
+@media  screen and (max-width: 1920px) and (min-width: 1090px) {
+    .accordion:hover .toggle__title {
+        color: #7b60e4;
+    }
+
+    .accordion:hover .toggle__title::after {
+        content: '';
+        background-image: url(./assets/icons/plus.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 3vw;
+        height: 3vh;
+        display: block;
+        transition: all 0.5s;
+    }
+
+    .accordion:hover .toggle :checked ~ .toggle__title::after {
+        content: '';
+        background-image: url(./assets/icons/minus.svg);
+        background-repeat: no-repeat;
+        transition: all 0.5s;
+    }
 }
 
-.accordion:hover .toggle__title {
-    color: #7b60e4;
+@media screen and (max-width: 1090px) and (min-width: 768px) {
+     .toggle__title::after {
+        content: '';
+        background-image: url(./assets/icons/plus.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 3vw;
+        height: 3vh;
+        display: block;
+        transition: all 0.5s;
+    }
+
+    .toggle :checked ~ .toggle__title::after {
+        content: '';
+        background-image: url(./assets/icons/minus.svg);
+        background-repeat: no-repeat;
+        transition: all 0.5s;
+    }
 }
 
-.accordion:hover .toggle :checked ~ .toggle__title::after {
-    content: '';
-    background-image: url(./assets/icons/minus.svg);
-    background-repeat: no-repeat;
-    transition: all 0.5s;
-}
+@media screen and (max-width: 768px) and (min-width: 320px) {
+
+   .accordion {
+    width: 100%;
+   }
+
+    .toggle__title::after {
+        content: '';
+        background-image: url(./assets/icons/plus.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 3vw;
+        height: 3vh;
+        display: block;
+        transition: all 0.5s;
+    }
+
+    .toggle :checked ~ .toggle__title::after {
+        content: '';
+        background-image: url(./assets/icons/minus.svg);
+        background-repeat: no-repeat;
+        transition: all 0.5s;
+    }
+} 
